@@ -34,6 +34,7 @@ useEffect(() => {
           <option value="EUR">EUR</option>
           <option value="CAD">CAD</option>
           <option value="INR">INR</option>
+          <option value="NP">NP</option>
         </select>
       </div>
     </div>
