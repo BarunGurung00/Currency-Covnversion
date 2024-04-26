@@ -1,44 +1,15 @@
-import {useState, useEffect} from 'react';
+import CurrencyConverter from "./Components/CurrencyConverter";
 
 function App() {
-const [currencyOptions, setCurrencyOptions] = useState([])
-
-useEffect(() => {
-  fetch("https://api.currencyapi.com/v3/latest?apikey=cur_live_zdok13Vm6bcqOwsrbPV1DUqMRcycFLaXtFuyWqEw")
-  .then(res => res.json())
-  .then(data => {
-          const keys = Object.keys(data.data)
-          const values = Object.values(data.data)
-          for(let value of values){
-            console.log(value.value,)
-          }
-  })
-          
-}, [])
-
   return (
-    <div className="App">
-      <h1 className="">Convert any currency</h1>
-      <div>
-        <input type="number" />
-        <select>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="CAD">CAD</option>
-        </select>
-      </div>
-      <div>
-        <input type="number" />
-        <select>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="CAD">CAD</option>
-          <option value="INR">INR</option>
-          <option value="NP">NP</option>
-        </select>
-      </div>
+    <div className="App flex justify-center items-center min-h-screen bg-slate-100">
+      <CurrencyConverter />
     </div>
   );
 }
 
 export default App;
+
+
+// https://api.frankfurter.app/latest?amount=10&from=GBP&to=USD
+// https://api.frankfurter.app/currencies
